@@ -25,15 +25,5 @@ const jawsdb = process.env.DATABASE_URL;
 const connParams = (process.env.DATABASE_URL) ? jawsdb : local;
 const connection = mysql.createConnection(connParams);
 
-// Attempt to connecto to the database
-connection.connect(error => {
-  if (error) {
-    console.error('ERROR: Unable to make a connection' + error.stack);
-    return;
-  }
-   
-  console.log('Connected to database as ID: ' + connection.threadId);
-});
-
 // Export the connection
 module.exports = connection;

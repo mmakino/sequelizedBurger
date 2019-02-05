@@ -9,10 +9,10 @@
       <div class="col" id="left-col">
         <div class="text-right ml-auto mr-5">
           {{#each burgers}}
-            {{#unless devoured}}
+            {{#unless this.devoured}}
               <div class="mb-1">
-                {{burger_name}}
-                <button class="btn btn-sm btn-outline-danger devour" burgerId="{{id}}">
+                {{this.name}}
+                <button class="btn btn-sm btn-outline-danger devour" burgerId="{{this.id}}">
                   Devour It!
                 </button>
               </div>
@@ -25,10 +25,10 @@
       <div class="col" id="right-col">
         <div class="text-left mr-auto ml-5">
           {{#each burgers}}
-            {{#if devoured}}
+            {{#if this.devoured}}
               <div class="mb-1">
-                {{burger_name}}
-                <button class="btn btn-sm btn-outline-dark remove" burgerId="{{id}}">
+                {{this.name}}
+                <button class="btn btn-sm btn-outline-dark remove" burgerId="{{this.id}}">
                   Remove
                 </button>
               </div>

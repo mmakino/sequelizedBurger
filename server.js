@@ -14,10 +14,6 @@ const exphbs  = require('express-handlebars');
 
 const app = express();
 
-// Load router module(s) and initialize
-const Router = require('./controllers/burgers_controller');
-const router = new Router(app);
-
 // Make use of the body-parsers
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -29,8 +25,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
-// Start routers
-router.start();
+// Load router middleware
+const router = require('./controllers/burgers_controller');
+app.use('/', router);
 
 // Start the server to listen to the port
 app.listen(PORT, () => {
