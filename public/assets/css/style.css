@@ -1,0 +1,23 @@
+
+/* CSS for the main page */
+
+body {
+  background-image: linear-gradient(to bottom right, yellow, darkorange);
+  height: 100vh;
+  font-size: 1.2em;
+}
+
+.title {
+  color: brown;
+}
+
+.burger-img {
+  width: 10%;
+  height: 10%;
+}
+
+#right-col {
+  font-size: 0.9em;
+  font-style: italic;
+  opacity: 0.75;
+}
