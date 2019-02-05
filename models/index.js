@@ -18,13 +18,14 @@ if (config.use_env_variable) {
   require('dotenv').config();
   const jawsdb = process.env.DATABASE_URL;
   
-  if (jawsdb) {
+  if (jawsdb) { // for Heroku
     sequelize = new Sequelize(jawsdb);
   }
   else {
     config.username = process.env.MYSQL_USER;
     config.password = process.env.MYSQL_PASSWD;
     
+    // Create database IF it doesn't exist yet at first
     const connection = mysql.createConnection({
       host: config.host,
       user: config.username,
@@ -46,7 +47,10 @@ fs
   });
 
 Object.keys(db).forEach(modelName => {
-  db[modelName].sync();
+  // Added to make sure tables get created
+  db[modelName].sync(); 
+  
+  // Set association if defined in each model; see eatDaBurger.js
   if (db[modelName].associate) {
     db[modelName].associate(db);
   }

@@ -1,21 +1,34 @@
 <div class="text-center">
-  <div class="container">
+  <div class="container-fluid">
     <img src="assets/image/burger.png" class="img-fluid rounded burger-img mt-1">
     <h1 class="display-5 title">Eat-Da-Burger!</h1>
 
     <div class="row">
 
       {{!-- Left Side for to-be-devoured burgers --}}
-      <div class="col" id="left-col">
-        <div class="text-right ml-auto mr-5">
+      <div class="col aligh-right" id="left-col">
+        <div class="text-right ml-auto mr-3">
           {{#each burgers}}
-            {{#unless this.devoured}}
-              <div class="mb-1">
-                {{this.name}}
-                <button class="btn btn-sm btn-outline-danger devour" burgerId="{{this.id}}">
+            {{#unless this.Burger.devoured}}
+            <div class="row mt-1">
+              <div class="col-4 text-right ml-auto">
+                {{this.Burger.name}}
+              </div>
+            
+              <div class="col-auto">
+                <form class="form-inline">
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="{{this.Burger.id}}" placeholder="Enter Your Name">
+                  </div>
+                </form>
+              </div>
+              
+              <div class="col-auto ml-auto">
+                <button class="btn btn-sm btn-outline-danger devour" burgerId="{{this.Burger.id}}">
                   Devour It!
                 </button>
               </div>
+            </div>
             {{/unless}}
           {{/each}}
         </div>
@@ -25,9 +38,9 @@
       <div class="col" id="right-col">
         <div class="text-left mr-auto ml-5">
           {{#each burgers}}
-            {{#if this.devoured}}
+            {{#if this.Burger.devoured}}
               <div class="mb-1">
-                {{this.name}}
+                {{this.Burger.name}} eaten by {{this.User.name}}
                 <button class="btn btn-sm btn-outline-dark remove" burgerId="{{this.id}}">
                   Remove
                 </button>

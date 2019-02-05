@@ -36,24 +36,31 @@ $(document).ready(() => {
 
     // Find the "id" of this burger to devour
     const burgerId = $(this).attr("burgerId");
+    const userName = $(`#${burgerId}`).val().trim();
     const aBurger= {
-      devoured: true
+      devoured: true,
+      userName: userName
     };
     
-    // Send the PUT request.
-    $.ajax("/devour/" + burgerId, {
-      type: "PUT",
-      data: aBurger
-    }).then(res => {
-        console.log("burger id(" + burgerId + ") is eaten");
-        // Reload the page to get the updated list
-        location.reload();
-      })
-      .catch(error => {
-        console.log(error);
-        // Hopefully still able to recover gracefully... 
-        location.reload();
-      });
+    if (userName.length > 0) {
+      // Send the PUT request.
+      $.ajax("/devour/" + burgerId, {
+        type: "PUT",
+        data: aBurger
+      }).then(res => {
+          console.log("burger id(" + burgerId + ") is eaten by " + userName);
+          // Reload the page to get the updated list
+          location.reload();
+        })
+        .catch(error => {
+          console.log(error);
+          // Hopefully still able to recover gracefully... 
+          location.reload();
+        });
+    } else {
+      alert('Please enter your name');
+    }
+
   });
   
   //
@@ -83,6 +90,4 @@ $(document).ready(() => {
         location.reload();
       });
   });
-
-
 });
