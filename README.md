@@ -8,6 +8,12 @@
 
 * Each `devoured` burger on the right side also has a `Remove` button to be deleted from the list.
 
+## Objectives
+
+* Implement the app with MVC Restful API
+* Utilize Sequelize ORM for MySQL database connection
+* Make use of multiple tables and relations
+
 ### Deployment and Availability
 
 * Heroku
@@ -70,11 +76,11 @@
 ### Demo
 * Although this is one page small app, hope the following snapshots give some ideas
 
-* Database table schema:
+* Database table schema diagram:
     ![Demo Image home](public/assets/image/demo-5.png)
 * Enter a name and clicking on `Devour It!` button will move the burger to the right side.
     ![Demo Image home](public/assets/image/demo-6.png)
-* `Burger Stas`: Customer(user) and Burger Data Summary
+* `Burger Stats`: Customer(user) and Burger Data Summary
     ![Demo Image home](public/assets/image/demo-7.png)
     
 ### Directories & Files
@@ -83,7 +89,7 @@ sequelizedBurger
 ├── config/
 │   └── config.json*                -- Sequelize framework config JSON
 ├── controllers/
-│   └── burgers_controller.js*      -- Controller with routes (m[V]c)
+│   └── burgers_controller.js*      -- Controller with routes
 ├── db/
 │   ├── schema.sql*                 -- database schema
 │   └── seed.sql*                   -- mock seed data set
