@@ -1,0 +1,24 @@
+<h3>Burger Consumption by Customer</h3>
+<table class="table table-sm table-responsive">
+  <thead>
+    <tr>
+      <th scope="col">Customer</th>
+      <th scope="col">Burger</th>
+      <th scope="col">Count (eaten)</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each userData}}
+    <tr>
+      <th scope="row">{{this.user}}</th>
+      <td>{{this.burger}}</td>
+      <td>{{this.count}}</td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+
+
+<p class="text-left">
+  <h3><a href="/">Back to home</a></h3>
+</p>
