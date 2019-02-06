@@ -11,9 +11,9 @@
 ### Deployment and Availability
 
 * Heroku
-  * Live app - https://aqueous-beach-82382.herokuapp.com
+  * Live app - https://damp-forest-95991.herokuapp.com/
 * GitHub
-  * Repository - https://github.com/mmakino/burger
+  * Repository - https://github.com/mmakino/sequelizedBurger
 
 ### Intallation
 
@@ -79,7 +79,49 @@
     
 ### Directories & Files
 ```
+sequelizedBurger
+├── config/
+│   └── config.json*                -- Sequelize framework config JSON
+├── controllers/
+│   └── burgers_controller.js*      -- Controller with routes (m[V]c)
+├── db/
+│   ├── schema.sql*                 -- database schema
+│   └── seed.sql*                   -- mock seed data set
+├── homework/                       -- Foler for the homework instruction
+│   ├── Images/
+│   │   ├── 1-Sequelized.jpg*
+│   │   ├── 2-Migrated.jpg*
+│   │   └── 3-Associated.jpg*
+│   └── homework_instructions.md*  
+├── migrations/
+├── models/                         -- Models for Sequelize schema
+│   ├── burger.js*                  -- a model for burgers
+│   ├── eatDaBurger.js*             -- a model for burgers & users
+│   ├── index.js*                   -- setup javascript for all models
+│   └── user.js*                    -- a model for users
+├── public/
+│   └── assets/
+│       ├── css/
+│       │   └── style.css*          -- Style sheet for the frontend
+│       ├── image/
+│       │   ├── burger.png*         -- Burger clipart image
+│       │   ├── demo-5.png*         -- For this README
+│       │   ├── demo-6.png*         -- For this README
+│       │   └── demo-7.png*         -- For this README
+│       └── javascript/
+│           └── app.js*             -- jQuery AJAX for accessing routes
+├── seeders/
+├── views/                          -- Handlebars view folder
+│   ├── images/
+│   ├── layouts/
+│   │   └── main.handlebars*        -- Main page handlebars file
+│   ├── index.handlebars*           -- Main page body handlebars file
+│   └── users.handlebars*           -- User/Consumer & burgers stats page
+├── README.md*                      -- This file
+├── package.json*                   -- npm json package file
+└── server.js*                      -- The main server javascript file
 
+16 directories, 24 files
 ```
 
 #### Written by [Motohiko Makino](https://mmakino.github.io/)

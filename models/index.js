@@ -15,13 +15,13 @@ let sequelize;
 if (config.use_env_variable) {
   sequelize = new Sequelize(process.env[config.use_env_variable], config);
 } else {
-  require('dotenv').config();
-  const jawsdb = process.env.DATABASE_URL;
+  const jawsdb = process.env.DATABASE_URL || process.env.JAWSDB_URL;
   
   if (jawsdb) { // for Heroku
     sequelize = new Sequelize(jawsdb);
   }
   else {
+    require('dotenv').config();
     config.username = process.env.MYSQL_USER;
     config.password = process.env.MYSQL_PASSWD;
     
