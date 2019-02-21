@@ -77,11 +77,13 @@
 * Although this is one page small app, hope the following snapshots give some ideas
 
 * Database table schema diagram:
-    ![Demo Image home](public/assets/image/demo-5.png)
+
+    [![Demo Image home](public/assets/image/demo-5.png)](https://damp-forest-95991.herokuapp.com)
+  * Currently burgers with the same name can be inserted into the "burgers" table because a person can eat two or more of the same burger when really starving as well as multiples of the same burger can be eaten by different people.
 * Enter a name and clicking on `Devour It!` button will move the burger to the right side.
-    ![Demo Image home](public/assets/image/demo-6.png)
+    [![Demo Image home](public/assets/image/demo-6.png)](https://damp-forest-95991.herokuapp.com)
 * `Burger Stats`: Customer(user) and Burger Data Summary
-    ![Demo Image home](public/assets/image/demo-7.png)
+    [![Demo Image home](public/assets/image/demo-7.png)](https://damp-forest-95991.herokuapp.com/data/by_user)
     
 ### Directories & Files
 ```
